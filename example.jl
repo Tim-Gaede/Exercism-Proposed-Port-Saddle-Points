@@ -1,4 +1,7 @@
 function saddle_points(matrix::Array{Array{Int64,1},1})
+    result = Tuple[]
+    if isempty(matrix);    return result;    end 
+
     R = length(matrix) # matrix is an array of arrays
 
     if R > 1
@@ -14,7 +17,9 @@ function saddle_points(matrix::Array{Array{Int64,1},1})
 
     C = length(matrix[1])
 
-    result = Tuple[]
+    
+    
+
     # Test row and column candidates
     for rₜ = 1 : R
         for cₜ = 1 : C
